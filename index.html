@@ -1,0 +1,658 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灼科（上海）智能科技有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        dark: '#1D2129',
+                        light: '#F2F3F5',
+                        'gray-medium': '#86909C'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-dark bg-white">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-sm">
+        <div class="container mx-auto px-4 md:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <i class="fa fa-cogs text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-primary" data-i18n="brand">灼科智能科技</span>
+                    </a>
+                </div>
+
+                <!-- 语言切换按钮 -->
+                <div class="flex items-center space-x-4">
+                    <button id="langZh" class="text-dark font-bold focus:outline-none" data-lang="zh">中文</button>
+                    <span class="text-gray-300">|</span>
+                    <button id="langEn" class="text-dark font-bold focus:outline-none" data-lang="en">EN</button>
+                </div>
+
+                <!-- 桌面导航 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-dark hover:text-primary transition-custom" data-i18n="nav_about">关于我们</a>
+                    <a href="#business" class="text-dark hover:text-primary transition-custom" data-i18n="nav_business">业务范围</a>
+                    <a href="#projects" class="text-dark hover:text-primary transition-custom" data-i18n="nav_projects">特色项目</a>
+                    <a href="#contact" class="text-dark hover:text-primary transition-custom" data-i18n="nav_contact">联系我们</a>
+                </nav>
+
+                <!-- 移动端菜单按钮 -->
+                <button id="menuBtn" class="md:hidden text-dark focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#about" class="text-dark hover:text-primary transition-custom py-2" data-i18n="nav_about">关于我们</a>
+                <a href="#business" class="text-dark hover:text-primary transition-custom py-2" data-i18n="nav_business">业务范围</a>
+                <a href="#projects" class="text-dark hover:text-primary transition-custom py-2" data-i18n="nav_projects">特色项目</a>
+                <a href="#contact" class="text-dark hover:text-primary transition-custom py-2" data-i18n="nav_contact">联系我们</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark mb-4">
+                        灼科智能科技<br>
+                        <span class="text-primary">创新技术 · 智能未来</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-medium mb-8 max-w-lg">
+                        专注于智能科技研发与应用，为工业领域提供创新解决方案，推动产业智能化升级。
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-custom shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            联系我们
+                        </a>
+                        <a href="#business" class="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/5 transition-custom">
+                            了解业务
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://picsum.photos/id/180/600/400" alt="智能科技设备展示" class="rounded-xl shadow-xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">关于灼科智能科技有限公司</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-medium max-w-2xl mx-auto">灼科（上海）智能科技有限公司致力于为工业领域提供先进的技术解决方案和高质量的智能设备。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://picsum.photos/id/20/600/400" alt="公司办公环境" class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-primary">公司简介</h3>
+                    <p class="mb-4 text-gray-medium">
+                        灼科（上海）智能科技有限公司成立于20XX年10月10日，是一家专注于科技推广和应用服务的高新技术企业。
+                    </p>
+                    <p class="mb-6 text-gray-medium">
+                        公司注册资本XXX万元，位于中国（上海）自由贸易试验区，拥有一支专业的技术研发和服务团队，致力于为客户提供高质量的产品和服务。
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-light p-5 rounded-lg">
+                            <div class="text-primary text-2xl mb-2">
+                                <i class="fa fa-check-circle"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">企业愿景</h4>
+                            <p class="text-gray-medium text-sm">成为行业领先的智能科技解决方案提供商</p>
+                        </div>
+                        <div class="bg-light p-5 rounded-lg">
+                            <div class="text-primary text-2xl mb-2">
+                                <i class="fa fa-bullseye"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">企业使命</h4>
+                            <p class="text-gray-medium text-sm">通过技术创新推动产业升级与发展</p>
+                        </div>
+                        <div class="bg-light p-5 rounded-lg">
+                            <div class="text-primary text-2xl mb-2">
+                                <i class="fa fa-handshake-o"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">核心价值观</h4>
+                            <p class="text-gray-medium text-sm">诚信、创新、专业、共赢</p>
+                        </div>
+                        <div class="bg-light p-5 rounded-lg">
+                            <div class="text-primary text-2xl mb-2">
+                                <i class="fa fa-line-chart"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">经营状态</h4>
+                            <p class="text-gray-medium text-sm">存续（在营、开业、在册）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 公司资质信息 -->
+            <div class="mt-16 bg-light p-6 md:p-8 rounded-xl">
+                <h3 class="text-xl font-bold mb-6 text-center">企业资质信息</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-5 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-primary mb-2">注册地址</h4>
+                        <p class="text-gray-medium">中国（上海）自由贸易试验区</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-primary mb-2">所属行业</h4>
+                        <p class="text-gray-medium">科技推广和应用服务业</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 业务范围 -->
+    <section id="business" class="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">业务范围</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-medium max-w-2xl mx-auto">我们提供多元化的技术服务和产品，满足不同行业客户的需求。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 业务项目1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-custom transform hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/119/600/400" alt="技术服务" class="w-full h-full object-cover transition-custom hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-primary text-2xl mb-3">
+                            <i class="fa fa-lightbulb-o"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">技术服务与开发</h3>
+                        <ul class="text-gray-medium space-y-2">
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                                <span>技术服务、技术开发、技术咨询</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                                <span>技术交流、技术转让、技术推广</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                                <span>新材料技术推广服务</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                                <span>科技中介服务</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 业务项目2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-custom transform hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/96/600/400" alt="设备制造" class="w-full h-full object-cover transition-custom hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-primary text-2xl mb-3">
+                            <i class="fa fa-industry"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">设备制造</h3>
+                        <ul class="text-gray-medium space-y-2">
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                                // 移动端菜单切换
+                                const menuBtn = document.getElementById('menuBtn');
+                                const mobileMenu = document.getElementById('mobileMenu');
+
+                                menuBtn.addEventListener('click', () => {
+                                    mobileMenu.classList.toggle('hidden');
+                                    if (mobileMenu.classList.contains('hidden')) {
+                                        menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+                                    } else {
+                                        menuBtn.innerHTML = '<i class="fa fa-times text-xl"></i>';
+                                    }
+                                });
+
+                                // 导航栏滚动效果
+                                const navbar = document.getElementById('navbar');
+                                window.addEventListener('scroll', () => {
+                                    if (window.scrollY > 50) {
+                                        navbar.classList.add('py-2', 'shadow');
+                                        navbar.classList.remove('py-3');
+                                    } else {
+                                        navbar.classList.add('py-3');
+                                        navbar.classList.remove('py-2', 'shadow');
+                                    }
+                                });
+
+                                // 返回顶部按钮
+                                const backToTopBtn = document.getElementById('backToTop');
+
+                                window.addEventListener('scroll', () => {
+                                    if (window.scrollY > 300) {
+                                        backToTopBtn.classList.remove('opacity-0', 'invisible');
+                                        backToTopBtn.classList.add('opacity-100', 'visible');
+                                    } else {
+                                        backToTopBtn.classList.add('opacity-0', 'invisible');
+                                        backToTopBtn.classList.remove('opacity-100', 'visible');
+                                    }
+                                });
+
+                                backToTopBtn.addEventListener('click', () => {
+                                    window.scrollTo({
+                                        top: 0,
+                                        behavior: 'smooth'
+                                    });
+                                });
+
+                                // 平滑滚动
+                                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                    anchor.addEventListener('click', function (e) {
+                                        e.preventDefault();
+
+                                        // 关闭移动端菜单（如果打开）
+                                        if (!mobileMenu.classList.contains('hidden')) {
+                                            mobileMenu.classList.add('hidden');
+                                            menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+                                        }
+
+                                        const targetId = this.getAttribute('href');
+                                        if (targetId === '#') return;
+
+                                        const targetElement = document.querySelector(targetId);
+                                        if (targetElement) {
+                                            const navbarHeight = navbar.offsetHeight;
+                                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+
+                                            window.scrollTo({
+                                                top: targetPosition,
+                                                behavior: 'smooth'
+                                            });
+                                        }
+                                    });
+                                });
+
+                                // ====== 语言切换功能 ======
+                                const translations = {
+                                    zh: {
+                                        brand: "灼科智能科技",
+                                        nav_about: "关于我们",
+                                        nav_business: "业务范围",
+                                        nav_projects: "特色项目",
+                                        nav_contact: "联系我们"
+                                    },
+                                    en: {
+                                        brand: "Zhuoke Intelligent Tech",
+                                        nav_about: "About Us",
+                                        nav_business: "Business",
+                                        nav_projects: "Projects",
+                                        nav_contact: "Contact"
+                                    }
+                                };
+
+                                function setLang(lang) {
+                                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                                        const key = el.getAttribute('data-i18n');
+                                        if (translations[lang][key]) {
+                                            el.textContent = translations[lang][key];
+                                        }
+                                    });
+                                    document.getElementById('langZh').classList.toggle('text-primary', lang === 'zh');
+                                    document.getElementById('langEn').classList.toggle('text-primary', lang === 'en');
+                                }
+                                document.getElementById('langZh').addEventListener('click', () => setLang('zh'));
+                                document.getElementById('langEn').addEventListener('click', () => setLang('en'));
+                                setLang('zh');
+                            <p class="text-gray-medium text-sm">提供高品质的金属切割与焊接设备，满足各类工业生产需求。</p>
+                        </div>
+                    </div>
+
+                    <div class="flex bg-light rounded-lg p-5 hover:bg-primary/5 transition-custom">
+                        <div class="text-primary text-2xl mr-4 mt-1">
+                            <i class="fa fa-microchip"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">电子专用设备销售</h3>
+                            <p class="text-gray-medium text-sm">专业销售各类电子专用设备，为电子制造业提供支持。</p>
+                        </div>
+                    </div>
+
+                    <div class="flex bg-light rounded-lg p-5 hover:bg-primary/5 transition-custom">
+                        <div class="text-primary text-2xl mr-4 mt-1">
+                            <i class="fa fa-cog"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">机械电气设备销售</h3>
+                            <p class="text-gray-medium text-sm">销售各类机械电气设备，提供一站式采购解决方案。</p>
+                        </div>
+                    </div>
+
+                    <div class="flex bg-light rounded-lg p-5 hover:bg-primary/5 transition-custom">
+                        <div class="text-primary text-2xl mr-4 mt-1">
+                            <i class="fa fa-paint-brush"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">涂装设备销售</h3>
+                            <p class="text-gray-medium text-sm">提供先进的涂装设备，满足不同行业的表面处理需求。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目图片展示 -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img src="https://picsum.photos/id/160/300/300" alt="金属切割设备展示" class="rounded-lg shadow-md w-full h-48 object-cover hover:opacity-90 transition-custom">
+                        <img src="https://picsum.photos/id/118/300/450" alt="工业机器人应用" class="rounded-lg shadow-md w-full h-64 object-cover hover:opacity-90 transition-custom">
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <img src="https://picsum.photos/id/106/300/450" alt="电子专用设备" class="rounded-lg shadow-md w-full h-64 object-cover hover:opacity-90 transition-custom">
+                        <img src="https://picsum.photos/id/28/300/300" alt="涂装设备展示" class="rounded-lg shadow-md w-full h-48 object-cover hover:opacity-90 transition-custom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">联系我们</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-medium max-w-2xl mx-auto">无论您有任何疑问或需求，都可以通过以下方式与我们联系，我们将尽快回复您。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- 联系信息 -->
+                <div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg h-full">
+                        <h3 class="text-xl font-bold mb-6">联系方式</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full text-primary mr-4">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">公司地址</h4>
+                                    <p class="text-gray-medium">中国（上海）自由贸易试验区</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full text-primary mr-4">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">联系电话</h4>
+                                    <p class="text-gray-medium">18916051697（微信同号）</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full text-primary mr-4">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">电子邮箱</h4>
+                                    <p class="text-gray-medium">info@zhuokeit.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full text-primary mr-4">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">工作时间</h4>
+                                    <p class="text-gray-medium">周一至周五: 9:00 - 18:00</p>
+                                    <p class="text-gray-medium">周六至周日: 休息</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">关注我们</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-weixin"></i>
+                                </a>
+                                <a href="#" class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-weibo"></i>
+                                </a>
+                                <a href="#" class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-youtube-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 联系表单 -->
+                <div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-6">发送消息</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-medium mb-2">您的姓名</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="请输入您的姓名">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-medium mb-2">电子邮箱</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="请输入您的电子邮箱">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-medium mb-2">联系电话</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="请输入您的联系电话">
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-medium mb-2">您的留言</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="请输入您的留言内容"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 transition-custom shadow-md hover:shadow-lg">
+                                发送消息
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-cogs text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">灼科智能</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        灼科（上海）智能科技有限公司致力于为工业领域提供先进的技术解决方案和高质量的智能设备。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-custom">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-custom">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-custom">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-custom">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-primary transition-custom">关于我们</a></li>
+                        <li><a href="#business" class="text-gray-400 hover:text-primary transition-custom">业务范围</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-primary transition-custom">特色项目</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition-custom">联系我们</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">业务领域</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-custom">技术服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-custom">设备制造</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-custom">设备销售</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-custom">进出口贸易</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">联系信息</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-400">中国（上海）自由贸易试验区</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone text-primary mr-2"></i>
+                            <span class="text-gray-400">18916051697（微信同号）</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope text-primary mr-2"></i>
+                            <span class="text-gray-400">info@zhuokeit.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>© 灼科（上海）智能科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+            } else {
+                menuBtn.innerHTML = '<i class="fa fa-times text-xl"></i>';
+            }
+        });
+
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow');
+                navbar.classList.remove('py-3');
+            } else {
+                navbar.classList.add('py-3');
+                navbar.classList.remove('py-2', 'shadow');
+            }
+        });
+
+        // 返回顶部按钮
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // 关闭移动端菜单（如果打开）
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+                }
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = navbar.offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+
+</body></html>
