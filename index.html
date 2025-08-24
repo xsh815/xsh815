@@ -1,269 +1,56 @@
-<html lang="zh-CN"><head>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>灼科（上海）智能科技有限公司</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="img/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        // ====== 中英文切换功能 ======
-        const translations = {
-            zh: {
-                brand: "灼科智能科技",
-                slogan: "创新技术 · 智能未来",
-                hero_desc: "激光技术开发、激光工作站、激光器及服务",
-                btn_contact: "联系我们",
-                btn_learn: "了解业务",
-                business: "业务范围",
-                laser_clean: "激光清洗",
-                laser_weld: "激光焊接",
-                laser_arc: "激光电弧复合焊",
-                laser_clad: "激光熔覆",
-                lab_ks: "灼科昆山激光实验室",
-                lab_ipg: "IPG上海及深圳激光实验室",
-                lab_trumpf: "通快太仓激光实验室",
-                lab_raycus: "锐科无锡及武汉实验室",
-                lab_other: "其它激光实验室",
-                laser: "激光器",
-                welding_head: "焊接头/振镜",
-                control_system: "激光及运动控制系统",
-                vision_monitor: "视觉及焊接质量监控系统",
-                ipg: "IPG激光器、振镜及其它产品",
-                trumpf: "通快激光器及其光学产品",
-                jc_pd: "金橙子&鹏鼎激光控制系统",
-                prest: "普雷斯特焊接头及LWM系统",
-                oct: "勒斯姆勒OCT熔深监控系统",
-                process_dev: "激光工艺开发",
-                laser_repair: "激光器维修",
-                laser_recycle: "二手激光器回收&销售",
-                core_tech: "核心工艺技术人员为10年以上顶尖激光实验室经验",
-                core_repair: "核心维修人员均为通快、IPG和相干资深工程师",
-                elec_eng: "电气工程师精通西门子系统及PLC",
-                contact: "联系我们",
-                address: "公司地址",
-                address_val: "中国（上海）自由贸易试验区",
-                phone_label: "联系电话",
-                phone_val: "18916051697（微信同号）",
-                email_label: "电子邮箱",
-                email_val: "vincentwang@youyugroup.com",
-                worktime: "工作时间",
-                workday: "周一至周五: 9:00 - 18:00",
-                weekend: "周六至周日: 休息",
-                follow: "关注我们",
-                footer_brand: "灼科智能",
-                footer_desc: "灼科（上海）智能科技有限公司致力于为工业领域提供先进的技术解决方案和高质量的智能设备。",
-                quick_links: "快速链接",
-                footer_about: "关于我们",
-                footer_business: "业务范围",
-                footer_projects: "特色项目",
-                footer_contact: "联系我们",
-                footer_scope: "业务领域",
-                footer_service: "技术服务",
-                footer_manufacture: "设备制造",
-                footer_sales: "设备销售",
-                footer_trade: "进出口贸易",
-                footer_contactinfo: "联系信息",
-                footer_addr: "中国（上海）自由贸易试验区",
-                footer_phone: "18916051697（微信同号）",
-                footer_email: "vincentwang@youyugroup.com",
-                copyright: "© 灼科（上海）智能科技有限公司 版权所有",
-                // 旧有内容
-                nav_about: "关于我们",
-                nav_business: "业务范围",
-                nav_contact: "联系我们",
-                about_title: "关于灼科智能科技有限公司",
-                about_desc: "灼科智能科技有限公司致力于为工业领域提供先进技术解决方案和高质量智能设备。",
-                company_profile: "公司简介",
-                company_intro1: "灼科(上海)智能科技有限公司是一家专注于激光技术创新与工业应用的高科技企业，核心业务涵盖激光技术开发、激光工作站研发及激光器相关服务。",
-                company_intro2: "公司拥有一支由10年以上顶尖激光实验室经验的核心工艺技术人员和通快、IPG等资深工程师组成的专业团队，配备IPG、通快、锐科等国际知名品牌激光器及振镜系统，并自主研发高精度激光控制系统。",
-                company_intro3: "依托灼科昆山、IPG上海及深圳、通快太仓等多个激光实验室资源，公司在激光清洗、焊接、电弧复合焊、熔覆等领域形成了技术优势，可为新能源、精密制造、汽车配件、消费电子等行业提供定制化激光解决方案，致力于成为工业激光应用领域的技术领导者与服务专家。",
-                vision: "企业愿景",
-                vision_desc: "成为行业领先的智能科技解决方案提供商",
-                mission: "企业使命",
-                mission_desc: "通过技术创新推动产业升级与发展",
-                values: "核心价值观",
-                values_desc: "诚信、创新、专业、共赢",
-                status: "经营状态",
-                status_desc: "存续（在营、开业、在册）",
-                business_desc: "我们提供多元化的技术服务和产品，满足不同行业客户的需求。",
-                service_dev: "技术服务与开发",
-                lab_resources: "相关实验室资源",
-                workstation: "激光工作站",
-                equipment_resources: "设备资源",
-                service: "技术服务",
-                tech_reserve: "技术储备",
-                contact_desc: "无论您有任何疑问或需求，都可以通过以下方式与我们联系，我们将尽快回复您。",
-                contact_info: "联系方式",
-                send_message: "发送消息",
-                your_name: "您的姓名",
-                your_name_ph: "请输入您的姓名",
-                email: "电子邮箱",
-                email_ph: "请输入您的电子邮箱",
-                phone: "联系电话",
-                phone_ph: "请输入您的联系电话",
-                message: "您的留言",
-                message_ph: "请输入您的留言内容",
-                send: "发送消息"
-            },
-            en: {
-                workstation_intro_title: "Laser Workstation Introduction",
-                workstation_intro_desc: "A laser workstation is an efficient processing platform integrating lasers, control systems, and automation devices, widely used in industrial scenarios such as cleaning, welding, and cutting.",
-                brand: "Zhuoke Intelligent Technology",
-                slogan: "Innovative Technology · Smart Future",
-                hero_desc: "Laser Technology Development, Workstations, Lasers & Services",
-                btn_contact: "Contact Us",
-                btn_learn: "Learn More",
-                business: "Business",
-                laser_clean: "Laser Cleaning",
-                laser_weld: "Laser Welding",
-                laser_arc: "Laser Arc Hybrid Welding",
-                laser_clad: "Laser Cladding",
-                lab_ks: "Zhuoke Kunshan Laser Lab",
-                lab_ipg: "IPG Shanghai & Shenzhen Laser Lab",
-                lab_trumpf: "Trumpf Taicang Laser Lab",
-                lab_raycus: "Raycus Wuxi & Wuhan Lab",
-                lab_other: "Other Laser Labs",
-                laser: "Laser",
-                welding_head: "Welding Head / Galvo",
-                control_system: "Laser & Motion Control System",
-                vision_monitor: "Vision & Welding Quality Monitoring System",
-                ipg: "IPG Lasers, Galvos & Others",
-                trumpf: "Trumpf Lasers & Optics",
-                jc_pd: "JCZ & Pengding Laser Control System",
-                prest: "Preste Welding Head & LWM System",
-                oct: "Lessmuller OCT Penetration Monitoring System",
-                process_dev: "Laser Process Development",
-                laser_repair: "Laser Repair",
-                laser_recycle: "Used Laser Recycling & Sales",
-                core_tech: "Core process technicians with 10+ years top laser lab experience",
-                core_repair: "Core repair staff are senior engineers from Trumpf, IPG, Coherent",
-                elec_eng: "Electrical engineers proficient in Siemens & PLC",
-                contact: "Contact Us",
-                address: "Address",
-                address_val: "China (Shanghai) Pilot Free Trade Zone",
-                phone_label: "Phone",
-                phone_val: "18916051697 (WeChat same number)",
-                email_label: "Email",
-                email_val: "vincentwang@youyugroup.com",
-                worktime: "Working Hours",
-                workday: "Mon-Fri: 9:00 - 18:00",
-                weekend: "Sat-Sun: Closed",
-                follow: "Follow Us",
-                footer_brand: "Zhuoke Intelligent",
-                footer_desc: "Zhuoke (Shanghai) Intelligent Technology Co., Ltd. is committed to providing advanced technology solutions and high-quality intelligent equipment for the industrial sector.",
-                quick_links: "Quick Links",
-                footer_about: "About Us",
-                footer_business: "Business",
-                footer_projects: "Featured Projects",
-                footer_contact: "Contact Us",
-                footer_scope: "Business Scope",
-                footer_service: "Technical Service",
-                footer_manufacture: "Equipment Manufacturing",
-                footer_sales: "Equipment Sales",
-                footer_trade: "Import & Export",
-                footer_contactinfo: "Contact Info",
-                footer_addr: "China (Shanghai) Pilot Free Trade Zone",
-                footer_phone: "18916051697 (WeChat same number)",
-                footer_email: "vincentwang@youyugroup.com",
-                copyright: "© Zhuoke (Shanghai) Intelligent Technology Co., Ltd. All rights reserved.",
-                // 旧有内容
-                nav_about: "About Us",
-                nav_business: "Business",
-                nav_contact: "Contact",
-                about_title: "About Zhuoke Intelligent Technology Co., Ltd.",
-                about_desc: "Zhuoke Intelligent Technology Co., Ltd. is committed to providing advanced technology solutions and high-quality intelligent equipment for the industrial sector.",
-                company_profile: "Company Profile",
-                company_intro1: "Zhuoke (Shanghai) Intelligent Technology Co., Ltd. is a high-tech enterprise focusing on laser technology innovation and industrial applications, with core businesses covering laser technology development, laser workstation R&D, and laser-related services.",
-                company_intro2: "The company has a professional team composed of core process technicians with more than 10 years of top laser laboratory experience and senior engineers from Trumpf, IPG, etc., equipped with internationally renowned brand lasers and galvanometer systems such as IPG, Trumpf, Raycus, and independently developed high-precision laser control systems.",
-                company_intro3: "Relying on multiple laser laboratory resources such as Zhuoke Kunshan, IPG Shanghai and Shenzhen, Trumpf Taicang, the company has formed technical advantages in laser cleaning, welding, arc hybrid welding, cladding and other fields, and can provide customized laser solutions for new energy, precision manufacturing, auto parts, consumer electronics and other industries, committed to becoming a technology leader and service expert in the field of industrial laser applications.",
-                vision: "Vision",
-                vision_desc: "To become an industry-leading intelligent technology solution provider",
-                mission: "Mission",
-                mission_desc: "Promote industrial upgrading and development through technological innovation",
-                values: "Core Values",
-                values_desc: "Integrity, Innovation, Professionalism, Win-win",
-                status: "Business Status",
-                status_desc: "Active (Operating, Open, Registered)",
-                business_desc: "We provide diversified technical services and products to meet the needs of customers in different industries.",
-                service_dev: "Technical Services & Development",
-                lab_resources: "Laboratory Resources",
-                workstation: "Laser Workstation",
-                equipment_resources: "Equipment Resources",
-                service: "Technical Service",
-                tech_reserve: "Technical Reserve",
-                contact_desc: "If you have any questions or needs, you can contact us in the following ways and we will reply as soon as possible.",
-                contact_info: "Contact Information",
-                send_message: "Send Message",
-                your_name: "Your Name",
-                your_name_ph: "Please enter your name",
-                email: "Email",
-                email_ph: "Please enter your email",
-                phone: "Phone",
-                phone_ph: "Please enter your phone number",
-                message: "Your Message",
-                message_ph: "Please enter your message",
-                send: "Send Message"
-            }
-        };
-        function setLang(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.textContent = translations[lang][key];
-                }
-            });
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-                const key = el.getAttribute('data-i18n-placeholder');
-                if (translations[lang][key]) {
-                    el.setAttribute('placeholder', translations[lang][key]);
-                }
-            });
-            document.getElementById('langZh').classList.toggle('text-primary', lang === 'zh');
-            document.getElementById('langEn').classList.toggle('text-primary', lang === 'en');
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('langZh').addEventListener('click', () => setLang('zh'));
-            document.getElementById('langEn').addEventListener('click', () => setLang('en'));
-            setLang('zh');
-        });
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#165DFF',
-                        secondary: '#36CFC9',
-                        dark: '#1D2129',
-                        light: '#F2F3F5',
-                        'gray-medium': '#86909C'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .text-shadow {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            .transition-custom {
-                transition: all 0.3s ease;
-            }
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/translations.js"></script>
+    <script src="js/interaction.js"></script>
 </head>
-<body class="font-sans text-dark bg-white">
+</body>
+    <script src="js/main.js"></script>
+</body>
+<script>
+// 深浅色切换逻辑，确保 DOM 元素已加载
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+    function setTheme(mode) {
+        if (mode === 'dark') {
+            html.classList.add('dark');
+            themeIcon.classList.remove('fa-moon-o');
+            themeIcon.classList.add('fa-sun-o');
+        } else {
+            html.classList.remove('dark');
+            themeIcon.classList.remove('fa-sun-o');
+            themeIcon.classList.add('fa-moon-o');
+        }
+    }
+    let userTheme = localStorage.getItem('theme');
+    if (!userTheme) {
+        userTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    setTheme(userTheme);
+    themeToggle.addEventListener('click', function() {
+        const isDark = html.classList.contains('dark');
+        setTheme(isDark ? 'light' : 'dark');
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+});
+</script>
     <!-- 导航栏 -->
-    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-sm">
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-sm dark:bg-dark/95">
         <div class="container mx-auto px-4 md:px-6 py-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <a href="#" class="flex items-center">
-                        <i class="fa fa-cogs text-primary text-2xl mr-2"></i>
+                        <img src="img/logo.png" alt="logo" class="h-8 w-8 mr-2 align-middle" style="display:inline-block;vertical-align:middle;">
                         <span class="text-xl font-bold text-primary" data-i18n="brand">灼科智能科技</span>
                     </a>
                 </div>
@@ -277,10 +64,16 @@
 
                 <!-- 桌面导航 -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-dark hover:text-primary transition-custom" data-i18n="nav_about">关于我们</a>
-                    <a href="#business" class="text-dark hover:text-primary transition-custom" data-i18n="nav_business">业务范围</a>
-                    <a href="#contact" class="text-dark hover:text-primary transition-custom" data-i18n="nav_contact">联系我们</a>
+                    <a href="#about" class="text-dark dark:text-white hover:text-primary transition-custom" data-i18n="nav_about">关于我们</a>
+                    <a href="#business" class="text-dark dark:text-white hover:text-primary transition-custom" data-i18n="nav_business">业务范围</a>
+                    <a href="#application" class="text-dark dark:text-white hover:text-primary transition-custom" data-i18n="nav_application">应用领域</a>
+                    <a href="#contact" class="text-dark dark:text-white hover:text-primary transition-custom" data-i18n="nav_contact">联系我们</a>
                 </nav>
+
+                <!-- 深浅色切换按钮 -->
+                <button id="themeToggle" class="ml-4 text-xl focus:outline-none" title="切换深浅色模式">
+                    <i id="themeIcon" class="fa fa-moon-o"></i>
+                </button>
 
                 <!-- 移动端菜单按钮 -->
                 <button id="menuBtn" class="md:hidden text-dark focus:outline-none">
@@ -301,13 +94,13 @@
     </header>
 
     <!-- 英雄区域 -->
-    <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-primary/5 to-secondary/5 dark:bg-gradient-to-br dark:from-dark-bg-from/80 dark:to-dark-bg-to/80">
         <div class="container mx-auto px-4 md:px-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark mb-4" data-i18n="brand">
-                        <span data-i18n="brand">灼科智能科技</span><br>
-                        <span class="text-primary" data-i18n="slogan">创新技术 · 智能未来</span>
+                        <span data-i18n="brand" class="drop-shadow font-bold text-dark dark:text-white">灼科智能科技</span><br>
+                        <span class="text-primary font-bold drop-shadow" data-i18n="slogan">创新技术 · 智能未来</span>
                     </h1>
                     <p class="text-lg md:text-xl text-gray-medium mb-8 max-w-lg">
                         <span data-i18n="hero_desc">激光技术开发、激光工作站、激光器及服务</span>
@@ -322,14 +115,23 @@
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <img src="img/head.png" alt="智能科技设备展示" class="rounded-xl shadow-xl w-full h-auto object-cover">
+                    <div class="relative flex flex-col items-center justify-center">
+                    <div class="overflow-hidden rounded-xl shadow-xl bg-white flex items-center justify-center"
+                        style="width:960px; height:480px; max-width:100%; max-height:100%;">
+                       <img id="heroImg" src="img/head1.jpg" alt="智能科技设备展示" class="object-cover w-full h-full transition-all duration-500" style="width:960px; height:480px; max-width:100%; max-height:100%;">
+                        </div>
+                        <div class="flex space-x-3 mt-4 justify-center">
+                            <button id="heroDot0" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-all" aria-label="图片1"></button>
+                            <button id="heroDot1" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-all" aria-label="图片2"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 关于我们 -->
-    <section id="about" class="py-16 md:py-24">
+    <section id="about" class="py-16 md:py-24 dark:bg-dark/80">
         <div class="container mx-auto px-4 md:px-6">
             <div class="text-center mb-16">
                 <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4" data-i18n="about_title">关于灼科智能科技有限公司</h2>
@@ -339,7 +141,15 @@
 
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <img src="img/about.png" alt="公司办公环境" class="rounded-xl shadow-lg w-full h-auto">
+                    <div class="relative flex flex-col items-center justify-center">
+                        <div class="overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center" style="width:480px; height:480px; max-width:100%; max-height:100%;">
+                            <img id="aboutImg" src="img/about1.png" alt="公司办公环境" class="object-cover w-full h-full transition-all duration-500" style="width:480px; height:480px; max-width:100%; max-height:100%;">
+                        </div>
+                        <div class="flex space-x-3 mt-4 justify-center">
+                            <button id="aboutDot0" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-all" aria-label="图片1"></button>
+                            <button id="aboutDot1" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-all" aria-label="图片2"></button>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold mb-4 text-primary" data-i18n="company_profile">公司简介</h3>
@@ -347,10 +157,10 @@
                         <span data-i18n="company_intro1">灼科(上海)智能科技有限公司是一家专注于激光技术创新与工业应用的高科技企业，核心业务涵盖激光技术开发、激光工作站研发及激光器相关服务。</span>
                     </p>
                     <p class="mb-4 text-gray-medium">
-                        <span data-i18n="company_intro2">公司拥有一支由10年以上顶尖激光实验室经验的核心工艺技术人员和通快、IPG等资深工程师组成的专业团队，配备IPG、通快、锐科等国际知名品牌激光器及振镜系统，并自主研发高精度激光控制系统。</span>
+                        <span data-i18n="company_intro2">公司拥有一支由10年以上顶尖激光实验室经验的核心工艺技术人员和资深工程师组成的专业团队，配备IPG、通快、锐科等国际知名品牌激光器及振镜系统，并自主研发高精度激光控制系统。</span>
                     </p>
                     <p class="mb-4 text-gray-medium">
-                        <span data-i18n="company_intro3">依托灼科昆山、IPG上海及深圳、通快太仓等多个激光实验室资源，公司在激光清洗、焊接、电弧复合焊、熔覆等领域形成了技术优势，可为新能源、精密制造、汽车配件、消费电子等行业提供定制化激光解决方案，致力于成为工业激光应用领域的技术领导者与服务专家。</span>
+                        <span data-i18n="company_intro3">依托灼科昆山激光实验室资源，公司在激光清洗、焊接、电弧复合焊、熔覆等领域形成了技术优势，可为新能源、精密制造、汽车配件、消费电子等行业提供定制化激光解决方案，致力于成为工业激光应用领域的技术领导者与服务专家。</span>
                     </p>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -389,7 +199,7 @@
     </section>
 
     <!-- 业务范围 -->
-    <section id="business" class="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+    <section id="business" class="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5 dark:bg-gradient-to-br dark:from-dark-bg-from/80 dark:to-dark-bg-to/80">
         <div class="container mx-auto px-4 md:px-6">
             <div class="text-center mb-16">
                 <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4" data-i18n="business">业务范围</h2>
@@ -427,29 +237,6 @@
                             </li>
                             <li></li>
                         </ul>
-                        <h4 class="text-xl font-bold mb-3" data-i18n="lab_resources">相关实验室资源</h4>
-                        <ul class="text-gray-medium space-y-2">
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="lab_ks">灼科昆山激光实验室</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="lab_ipg">IPG上海及深圳激光实验室</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="lab_trumpf">通快太仓激光实验室</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="lab_raycus">锐科无锡及武汉实验室</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="lab_other">其它激光实验室</span>
-                            </li>
-                        </ul>
                     </div>
                 </div>
 
@@ -482,29 +269,6 @@
                             </li>
                             <li></li>
                         </ul>
-                        <h4 class="text-xl font-bold mb-3" data-i18n="equipment_resources">设备资源</h4>
-                        <ul class="text-gray-medium space-y-2">
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="ipg">IPG激光器、振镜及其它产品</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="trumpf">通快激光器及其光学产品</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="jc_pd">金橙子&鹏鼎激光控制系统</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="prest">普雷斯特焊接头及LWM系统</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="oct">勒斯姆勒OCT熔深监控系统</span>
-                            </li>
-                        </ul>
                     </div>
                 </div>
 
@@ -533,21 +297,6 @@
                             </li>
                             <li></li>
                         </ul>
-                        <h4 class="text-xl font-bold mb-3" data-i18n="tech_reserve">技术储备</h4>
-                        <ul class="text-gray-medium space-y-2">
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="core_tech">核心工艺技术人员为10年以上顶尖激光实验室经验</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="core_repair">核心维修人员均为通快、IPG和相干资深工程师</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa fa-check text-primary mt-1 mr-2"></i>
-                                <span data-i18n="elec_eng">电气工程师精通西门子系统及PLC</span>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -555,49 +304,75 @@
         </div>
     </section>
 
-    <!-- 激光工作站简介（项目图片展示）单独section -->
-    <section id="workstation-intro" class="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div class="container mx-auto px-4 md:px-6 mt-8">
-            <div class="text-center mb-8">
-                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-2" data-i18n="workstation_intro_title">激光工作站简介</h2>
-                <p class="text-gray-medium max-w-2xl mx-auto" data-i18n="workstation_intro_desc">
-                    激光工作站是一种集成激光器、控制系统和自动化装置的高效加工平台，广泛应用于清洗、焊接、切割等工业场景。
-                </p>
+
+    <!-- 应用领域 section -->
+    <section id="application" class="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5 dark:bg-gradient-to-br dark:from-dark-bg-from/80 dark:to-dark-bg-to/80">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4" data-i18n="application">应用领域</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-medium max-w-2xl mx-auto" data-i18n="application_desc">我们在新能源、精密制造、汽车、电子等领域拥有丰富的激光工艺应用经验，助力客户实现高效、智能制造。</p>
             </div>
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <!-- 左侧：工作站介绍（更窄，内容更丰富） -->
-                <div class="w-full md:w-2/5 h-[32rem] flex flex-col justify-center">
-                    <div id="workstationInfo" class="bg-white/80 rounded-xl shadow-lg p-6 h-full flex flex-col justify-center transition-all duration-500 max-w-[95%] md:max-w-[90%] mx-auto">
-                        <h3 class="text-xl font-bold mb-4 text-primary" id="wsName">单工位激光工作站</h3>
-                        <p class="text-gray-medium mb-4 text-sm md:text-base" id="wsDesc">适用于小批量、多品种生产，结构紧凑，操作灵活。该类型工作站通常采用模块化设计，便于根据不同工艺需求进行快速调整和升级。广泛应用于精密零部件、医疗器械、电子元件等行业的激光焊接、打标、切割等工艺。优点包括占地面积小、投资成本低、切换产品灵活、维护简便。缺点是自动化程度有限，主要依赖人工上下料，生产效率适中，适合研发、小批量或多品种生产场景。</p>
-                        <ul class="text-gray-500 text-sm space-y-1" id="wsFeatures">
-                            <li>适合多样化定制需求</li>
-                            <li>人工上下料，灵活性高</li>
-                            <li>适合研发和小批量生产</li>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
+                <!-- 新能源领域应用 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-custom transform hover:-translate-y-1 flex flex-col">
+                    <img src="img/head2.jpg" alt="新能源" class="w-full h-80 object-cover">
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-3 text-primary" data-i18n="app_new_energy">新能源领域应用</h3>
+                        <h4 class="text-lg font-semibold mb-2" data-i18n="app_new_energy_1">电池激光清洗&焊接</h4>
+                        <ul class="text-gray-medium space-y-2 text-sm mb-2">
+                            <li data-i18n="app_new_energy_11">★ 汇流排激光清洗&焊接</li>
+                            <li data-i18n="app_new_energy_12">★ FPC信号采集线焊接</li>
+                            <li data-i18n="app_new_energy_13">★ 电池极耳焊接</li>
+                            <li data-i18n="app_new_energy_14">★ 4680电池集流盘焊接</li>
+                        </ul>
+                        <h4 class="text-lg font-semibold mb-2" data-i18n="app_new_energy_2">电驱激光清洗&焊接</h4>
+                        <ul class="text-gray-medium space-y-2 text-sm mb-2">
+                            <li data-i18n="app_new_energy_21">★ Hair-pin激光去漆皮&焊接</li>
+                            <li data-i18n="app_new_energy_22">★ 定子硅钢片激光焊接</li>
+                            <li data-i18n="app_new_energy_23">★ 中间轴激光焊接</li>
+                            <li data-i18n="app_new_energy_24">★ 差壳激光清洗&焊接</li>
+                        </ul>
+                        <h4 class="text-lg font-semibold mb-2" data-i18n="app_new_energy_3">电控激光及检测应用</h4>
+                        <ul class="text-gray-medium space-y-2 text-sm">
+                            <li data-i18n="app_new_energy_31">★ 逆变器铜牌激光清洗&焊接</li>
+                            <li data-i18n="app_new_energy_32">★ 视觉定位焊接</li>
+                            <li data-i18n="app_new_energy_33">★ OTC焊接熔深监控</li>
                         </ul>
                     </div>
                 </div>
-                <!-- 右侧：图片轮播（图片可缩放） -->
-                <div class="w-full md:w-3/5 relative h-[32rem] flex items-center justify-center">
-                    <div class="overflow-hidden rounded-2xl shadow-xl w-full md:w-[90%] h-full flex items-center justify-center bg-light">
-                        <div class="w-full h-full flex items-center justify-center bg-white">
-                            <img id="wsImg" src="img/single_laser_workstation.jpg" alt="单工位激光工作站" class="object-contain w-full h-full transition-all duration-500" style="max-width: 100%; max-height: 100%;">
-                        </div>
+                <!-- 精密制造及电子领域应用 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-custom transform hover:-translate-y-1 flex flex-col">
+                    <img src="img/head1.jpg" alt="精密制造及电子" class="w-full h-80 object-cover">
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-3 text-primary" data-i18n="app_precision">精密制造及电子领域应用</h3>
+                        <h4 class="text-lg font-semibold mb-2" data-i18n="app_auto">白车身及汽车配件</h4>
+                        <ul class="text-gray-medium space-y-2 text-sm mb-2">
+                            <li data-i18n="app_auto_list1">★ 安全气囊激光焊接</li>
+                            <li data-i18n="app_auto_list2">★ 高强钢激光焊接</li>
+                            <li data-i18n="app_auto_list3">★ 汽车线束激光焊接</li>
+                            <li data-i18n="app_auto_list4">★ 汽车摄像头激光焊接</li>
+                        </ul>
+                        <h4 class="text-lg font-semibold mb-2" data-i18n="app_power">发变电系统</h4>
+                        <ul class="text-gray-medium space-y-2 text-sm mb-2">
+                            <li data-i18n="app_power_list1">★ 高压开关激光清洗</li>
+                            <li data-i18n="app_power_list2">★ 输电铜排激光焊接</li>
+                            <li data-i18n="app_power_list3">★ 风电定子铜排激光焊接</li>
+                        </ul>
+                        <h4 class="text-lg font-semibold mb-2" data-i18n="app_consume">消费电子</h4>
+                        <ul class="text-gray-medium space-y-2 text-sm">
+                            <li data-i18n="app_consume_list1">★ USB&Type-C接口焊接</li>
+                            <li data-i18n="app_consume_list2">★ 高精度激光打标</li>
+                            <li data-i18n="app_consume_list3">★ 压力传&氧传感器焊接</li>
+                        </ul>
                     </div>
-                    <!-- 左右箭头按钮 -->
-                    <button id="wsPrev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary text-primary hover:text-white rounded-full p-2 shadow transition-custom z-10">
-                        <i class="fa fa-chevron-left"></i>
-                    </button>
-                    <button id="wsNext" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary text-primary hover:text-white rounded-full p-2 shadow transition-custom z-10">
-                        <i class="fa fa-chevron-right"></i>
-                    </button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 联系我们 -->
-    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5 dark:bg-gradient-to-br dark:from-dark-bg-from/80 dark:to-dark-bg-to/80">
         <div class="container mx-auto px-4 md:px-6">
             <div class="text-center mb-16">
                 <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4" data-i18n="contact">联系我们</h2>
@@ -715,8 +490,8 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center mb-4">
-                        <i class="fa fa-cogs text-primary text-2xl mr-2"></i>
-                        <span class="text-xl font-bold" data-i18n="footer_brand">灼科智能</span>
+                        <img src="img/logo.png" alt="logo" class="h-8 w-8 mr-2 align-middle" style="display:inline-block;vertical-align:middle;">
+                        <span class="text-xl font-bold text-gray-400" data-i18n="footer_brand">灼科智能</span>
                     </div>
                     <p class="text-gray-400 mb-4">
                         <span data-i18n="footer_desc">灼科（上海）智能科技有限公司致力于为工业领域提供先进的技术解决方案和高质量的智能设备。</span>
@@ -738,7 +513,7 @@
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-bold mb-4" data-i18n="quick_links">快速链接</h4>
+                    <h4 class="text-lg font-bold mb-4 text-gray-400" data-i18n="quick_links">快速链接</h4>
                     <ul class="space-y-2">
                         <li><a href="#about" class="text-gray-400 hover:text-primary transition-custom" data-i18n="footer_about">关于我们</a></li>
                         <li><a href="#business" class="text-gray-400 hover:text-primary transition-custom" data-i18n="footer_business">业务范围</a></li>
@@ -748,7 +523,7 @@
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-bold mb-4" data-i18n="footer_scope">业务领域</h4>
+                    <h4 class="text-lg font-bold mb-4 text-gray-400" data-i18n="footer_scope">业务领域</h4>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-primary transition-custom" data-i18n="footer_service">技术服务</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-primary transition-custom" data-i18n="footer_manufacture">设备制造</a></li>
@@ -758,7 +533,7 @@
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-bold mb-4" data-i18n="footer_contactinfo">联系信息</h4>
+                    <h4 class="text-lg font-bold mb-4 text-gray-400" data-i18n="footer_contactinfo">联系信息</h4>
                     <ul class="space-y-2">
                         <li class="flex items-start">
                             <i class="fa fa-map-marker text-primary mt-1 mr-2"></i>
@@ -787,190 +562,5 @@
         <i class="fa fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript -->
-    <script>
-        // 移动端菜单切换
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
-            } else {
-                menuBtn.innerHTML = '<i class="fa fa-times text-xl"></i>';
-            }
-        });
-
-        // 导航栏滚动效果
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('py-2', 'shadow');
-                navbar.classList.remove('py-3');
-            } else {
-                navbar.classList.add('py-3');
-                navbar.classList.remove('py-2', 'shadow');
-            }
-        });
-
-        // 返回顶部按钮
-        const backToTopBtn = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'invisible');
-                backToTopBtn.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopBtn.classList.add('opacity-0', 'invisible');
-                backToTopBtn.classList.remove('opacity-100', 'visible');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                // 关闭移动端菜单（如果打开）
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                    menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
-                }
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const navbarHeight = navbar.offsetHeight;
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // 激光工作站简介轮播（中英文）
-        (function() {
-            const wsData = [
-                {
-                    img: 'img/single_laser_workstation.jpg',
-                    name: { zh: '单工位激光工作站', en: 'Single-station Laser Workstation' },
-                    desc: {
-                        zh: '适用于小批量、多品种生产，结构紧凑，操作灵活。该类型工作站通常采用模块化设计，便于根据不同工艺需求进行快速调整和升级。广泛应用于精密零部件、医疗器械、电子元件等行业的激光焊接、打标、切割等工艺。优点包括占地面积小、投资成本低、切换产品灵活、维护简便。缺点是自动化程度有限，主要依赖人工上下料，生产效率适中，适合研发、小批量或多品种生产场景。',
-                        en: 'Suitable for small batch and multi-variety production, with a compact structure and flexible operation. This type of workstation typically adopts a modular design, allowing for quick adjustments and upgrades to meet different process requirements. It is widely used in industries such as precision parts, medical devices, and electronic components for laser welding, marking, and cutting. Advantages include small footprint, low investment cost, flexible product changeover, and easy maintenance. The main limitation is the lower degree of automation, relying on manual loading and unloading, making it best suited for R&D, small batch, or multi-variety production.'
-                    },
-                    features: {
-                        zh: ['适合多样化定制需求', '人工上下料，灵活性高', '适合研发和小批量生产'],
-                        en: ['Suitable for customized needs', 'Manual loading/unloading, high flexibility', 'Ideal for R&D and small batch production']
-                    }
-                },
-                {
-                    img: 'img/double_laser_workstation.jpg',
-                    name: { zh: '双工位激光工作站', en: 'Double-station Laser Workstation' },
-                    desc: {
-                        zh: '双工位激光工作站配备两个独立工位，可实现交替作业，大幅提升生产效率。每个工位可独立运行，减少设备空闲时间，适合中等批量生产。常用于汽车零部件、五金工具、家电等行业的激光焊接、切割等工艺。优点是效率高、可连续生产、设备利用率高。缺点为结构相对复杂，初始投资略高，对操作人员的协同配合有一定要求。适合对产能和效率有较高要求的企业。',
-                        en: 'The double-station laser workstation is equipped with two independent stations, enabling alternate operation and significantly improving production efficiency. Each station can operate independently, reducing equipment idle time and making it suitable for medium batch production. It is commonly used in industries such as automotive parts, hardware tools, and home appliances for laser welding and cutting. Advantages include high efficiency, continuous production, and high equipment utilization. The drawbacks are a relatively complex structure, slightly higher initial investment, and the need for good coordination among operators. It is ideal for enterprises with higher requirements for capacity and efficiency.'
-                    },
-                    features: {
-                        zh: ['双工位交替作业', '适合中等批量生产', '提升设备利用率'],
-                        en: ['Alternate operation of two stations', 'Suitable for medium batch production', 'Improved equipment utilization']
-                    }
-                },
-                {
-                    img: 'img/longmen_laser_workstation.jpg',
-                    name: { zh: '龙门式激光工作站', en: 'Gantry Laser Workstation' },
-                    desc: {
-                        zh: '龙门式激光工作站采用龙门结构，适合大尺寸工件的激光加工。其横梁和立柱设计保证了高刚性和高精度运动控制，常用于航空航天、轨道交通、重型机械等行业的大型金属板材、结构件的焊接、切割。优点是加工范围大、自动化程度高、可集成多轴联动和自动上下料系统。缺点为占地面积大、设备成本高、对场地和安装有较高要求。适合大批量、大尺寸工件的自动化生产。',
-                        en: 'The gantry laser workstation features a gantry structure, making it suitable for laser processing of large workpieces. Its beam and column design ensures high rigidity and precise motion control. It is widely used in industries such as aerospace, rail transit, and heavy machinery for welding and cutting large metal plates and structural parts. Advantages include a large processing range, high degree of automation, and the ability to integrate multi-axis linkage and automated loading/unloading systems. The disadvantages are large footprint, high equipment cost, and higher requirements for site and installation. It is best suited for automated production of large batches and large workpieces.'
-                    },
-                    features: {
-                        zh: ['适合大尺寸工件', '自动化上下料', '高精度运动控制'],
-                        en: ['For large workpieces', 'Automated loading/unloading', 'High-precision motion control']
-                    }
-                },
-                {
-                    img: 'img/transfer_table_laser_workstation.jpg',
-                    name: { zh: '转台式激光工作站', en: 'Rotary Table Laser Workstation' },
-                    desc: {
-                        zh: '转台式激光工作站配备高精度旋转工作台，可实现工件自动切换和多工位连续加工。广泛应用于汽车零部件、医疗器械、电子产品等需要高节拍、高一致性的批量生产场景。优点是节拍快、自动化程度高、适合大批量生产。缺点为结构复杂、维护要求高、对操作和编程有一定技术要求。适合对生产效率和一致性有严格要求的自动化生产线。',
-                        en: 'The rotary table laser workstation is equipped with a high-precision rotary table, enabling automatic workpiece switching and multi-station continuous processing. It is widely used in automotive parts, medical devices, and electronic products for high-cycle, high-consistency mass production. Advantages include fast cycle time, high degree of automation, and suitability for large-scale production. The disadvantages are complex structure, higher maintenance requirements, and certain technical requirements for operation and programming. It is ideal for automated production lines with strict requirements for efficiency and consistency.'
-                    },
-                    features: {
-                        zh: ['旋转工作台自动切换', '适合大批量生产', '节拍快'],
-                        en: ['Rotary table for auto switching', 'Ideal for mass production', 'Fast cycle time']
-                    }
-                }
-            ];
-            let current = 0;
-            let lang = 'zh';
-            const wsName = document.getElementById('wsName');
-            const wsDesc = document.getElementById('wsDesc');
-            const wsFeatures = document.getElementById('wsFeatures');
-            const wsImg = document.getElementById('wsImg');
-            const wsPrev = document.getElementById('wsPrev');
-            const wsNext = document.getElementById('wsNext');
-            // 自动切换
-            let timer = null;
-            function updateWS() {
-                wsName.textContent = wsData[current].name[lang];
-                wsDesc.textContent = wsData[current].desc[lang];
-                wsImg.src = wsData[current].img;
-                wsImg.alt = wsData[current].name[lang];
-                wsFeatures.innerHTML = '';
-                wsData[current].features[lang].forEach(f => {
-                    const li = document.createElement('li');
-                    li.textContent = f;
-                    wsFeatures.appendChild(li);
-                });
-            }
-            function nextWS() {
-                current = (current + 1) % wsData.length;
-                updateWS();
-            }
-            function prevWS() {
-                current = (current - 1 + wsData.length) % wsData.length;
-                updateWS();
-            }
-            wsNext.addEventListener('click', () => {
-                nextWS();
-                resetTimer();
-            });
-            wsPrev.addEventListener('click', () => {
-                prevWS();
-                resetTimer();
-            });
-            function resetTimer() {
-                if (timer) clearInterval(timer);
-                timer = setInterval(nextWS, 5000);
-            }
-            // 语言切换联动
-            function syncLang(newLang) {
-                lang = newLang;
-                updateWS();
-            }
-            // 监听全局语言切换
-            const origSetLang = window.setLang;
-            window.setLang = function(l) {
-                origSetLang(l);
-                syncLang(l);
-            };
-            // 初始化
-            updateWS();
-            resetTimer();
-        })();
-    </script>
-
-
-</body></html>
+</body>
+</html>

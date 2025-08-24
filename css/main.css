@@ -1,0 +1,138 @@
+/* 标题颜色增强，亮色深色都清晰 */
+h1, h2, h3, h4, .font-bold, .text-xl, .text-lg {
+  color: #1d2129 !important;
+}
+.dark h1, .dark h2, .dark h3, .dark h4, .dark .font-bold, .dark .text-xl, .dark .text-lg {
+  color: #fff !important;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .content-auto { content-visibility: auto; }
+  .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .transition-custom { transition: all 0.3s ease; }
+}
+
+body {
+  background: #f2f3f5;
+  color: #23272f;
+}
+.dark body {
+  background: linear-gradient(135deg, #1D2129 0%, #23272f 100%) !important;
+  color: #f2f3f5;
+}
+
+/* section 背景渐变更淡，提升对比度 */
+section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e6fcfa 100%);
+}
+.dark section {
+  background: linear-gradient(135deg, #23272f 0%, #1D2129 100%) !important;
+}
+
+/* 卡片、表单、导航等白底，暗色模式下深灰底 */
+.bg-white,
+.bg-white\/95,
+.bg-white\/80 {
+  background-color: #fff !important;
+  color: #23272f !important;
+}
+.dark .bg-white,
+.dark .bg-white\/95,
+.dark .bg-white\/80 {
+  background-color: #23272f !important;
+  color: #f2f3f5 !important;
+}
+.bg-light {
+  background-color: #f2f3f5 !important;
+  color: #23272f !important;
+}
+.dark .bg-light {
+  background-color: #1d2129 !important;
+  color: #f2f3f5 !important;
+}
+.shadow-lg, .shadow-xl, .shadow, .shadow-sm {
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+
+/* 暗色模式字体优化 */
+.text-dark {
+  color: #23272f !important;
+}
+.dark .text-dark {
+  color: #f2f3f5 !important;
+}
+.text-gray-medium {
+  color: #86909c !important;
+}
+.dark .text-gray-medium {
+  color: #b0b8c1 !important;
+}
+
+/* 页脚优化：浅色模式下文字更深，链接更明显 */
+footer {
+  background: #23272f;
+  color: #fff;
+}
+footer .text-gray-400,
+footer .text-gray-500 {
+  color: #23272f !important;
+}
+footer .text-primary {
+  color: #165DFF !important;
+}
+footer a {
+  color: #23272f;
+}
+footer a:hover {
+  color: #165DFF !important;
+}
+footer .fa {
+  color: #165DFF !important;
+}
+
+/* 页脚所有文字在浅色模式下加深，深色模式下变浅，保证可读性 */
+footer, footer .text-gray-400, footer .text-gray-500, footer .font-bold, footer .text-xl, footer .text-lg, footer h4, footer ul li, footer a {
+  color: #23272f !important;
+}
+footer .text-primary {
+  color: #165DFF !important;
+}
+footer a:hover {
+  color: #165DFF !important;
+}
+footer .fa {
+  color: #165DFF !important;
+}
+
+.dark footer, .dark footer .text-gray-400, .dark footer .text-gray-500, .dark footer .font-bold, .dark footer .text-xl, .dark footer .text-lg, .dark footer h4, .dark footer ul li, .dark footer a {
+  color: #f2f3f5 !important;
+}
+.dark footer .text-primary {
+  color: #36CFC9 !important;
+}
+.dark footer a:hover {
+  color: #36CFC9 !important;
+}
+.dark footer .fa {
+  color: #36CFC9 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    background: #23272f;
+    color: #fff;
+  }
+  footer .text-gray-400,
+  footer .text-gray-500 {
+    color: #b0b8c1 !important;
+  }
+  footer a {
+    color: #b0b8c1;
+  }
+  footer a:hover {
+    color: #36CFC9;
+  }
+}
